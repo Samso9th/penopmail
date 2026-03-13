@@ -19,7 +19,7 @@ import {
 
 const navItems = [
   { label: "Overview", href: "/dashboard", icon: Home },
-  { label: "Mail", href: "/dashboard/mail", icon: Inbox },
+  { label: "Mails", href: "/dashboard/mail", icon: Inbox },
   { label: "Aliases", href: "/dashboard/aliases", icon: Mail },
   { label: "Domains", href: "/dashboard/domains", icon: Globe },
   { label: "Settings", href: "/dashboard/settings", icon: Settings },
@@ -35,12 +35,11 @@ export function AppSidebar() {
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
               <Link href="/">
-                <div className="bg-primary text-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg text-sm font-bold">
-                  P
-                </div>
                 <div className="flex flex-col gap-0.5 leading-none">
-                  <span className="font-semibold">PeponMail</span>
-                  <span className="text-muted-foreground text-xs">Dashboard</span>
+                  <span className="text-base font-bold tracking-tight">
+                    Pepon<span className="text-primary">Mail</span>
+                  </span>
+                  <span className="text-muted-foreground text-xs">Console</span>
                 </div>
               </Link>
             </SidebarMenuButton>

@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 const Login = () => {
   return (
     <Background>
-      <section className="py-28 lg:pt-44 lg:pb-32">
+      <section className="py-12 lg:pt-20 lg:pb-16">
         <div className="container">
           <div className="flex flex-col gap-4">
             <div className="mx-auto w-full max-w-sm">
