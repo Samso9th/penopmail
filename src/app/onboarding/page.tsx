@@ -26,6 +26,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { haptics } from "@/lib/haptics";
 
 const PEPONMAIL_DOMAINS = ["peponmail.com", "pepon.email", "peponsend.com"];
 
@@ -128,7 +129,7 @@ export default function OnboardingPage() {
                   {(["shared", "custom"] as const).map((t) => (
                     <button
                       key={t}
-                      onClick={() => setDomainType(t)}
+                      onClick={() => { haptics.trigger(); setDomainType(t); }}
                       className={`rounded-lg border p-3 text-left transition-colors ${
                         domainType === t
                           ? "border-primary bg-primary/5"
@@ -153,7 +154,7 @@ export default function OnboardingPage() {
                       {PEPONMAIL_DOMAINS.map((d) => (
                         <button
                           key={d}
-                          onClick={() => setSelectedShared(d)}
+                          onClick={() => { haptics.trigger(); setSelectedShared(d); }}
                           className={`rounded-lg border px-3 py-2 text-left text-sm transition-colors ${
                             selectedShared === d
                               ? "border-primary bg-primary/5 font-medium"
@@ -197,7 +198,7 @@ export default function OnboardingPage() {
                           <span className="text-muted-foreground">
                             ({d.type})
                           </span>
-                          <button onClick={() => removeDomain(d.domain)}>
+                          <button onClick={() => { haptics.trigger(); removeDomain(d.domain); }}>
                             <X className="size-3" />
                           </button>
                         </Badge>
@@ -299,7 +300,10 @@ export default function OnboardingPage() {
                   <Button
                     className="flex-1"
                     onClick={() => {
-                      if (validateAmount(amount)) setStep(2);
+                      if (validateAmount(amount)) {
+                        haptics.success();
+                        setStep(2);
+                      }
                     }}
                   >
                     Fund &amp; Continue <ArrowRight className="ml-2 size-4" />

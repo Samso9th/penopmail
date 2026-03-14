@@ -1,8 +1,11 @@
+"use client";
+
 import * as React from "react";
 
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 
+import { haptics } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
@@ -42,6 +45,7 @@ function Button({
   variant,
   size,
   asChild = false,
+  onClick,
   ...props
 }: React.ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
@@ -49,10 +53,23 @@ function Button({
   }) {
   const Comp = asChild ? Slot : "button";
 
+  const handleClick = React.useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>) => {
+      if (variant === "destructive") {
+        haptics.warning();
+      } else {
+        haptics.trigger();
+      }
+      onClick?.(e);
+    },
+    [variant, onClick],
+  );
+
   return (
     <Comp
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
+      onClick={handleClick}
       {...props}
     />
   );

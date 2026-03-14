@@ -42,7 +42,7 @@ export const Hero = () => {
           </h1>
 
           <p className="text-muted-foreground text-1xl mt-5 md:text-3xl">
-            Custom email aliases from ₦500/month. No domain needed. Get
+            Custom email addresses from ₦500/month. No domain needed. Get
             professional email addresses in minutes.
           </p>
 

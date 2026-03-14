@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { formSchema } from "@/lib/form-schema";
+import { haptics } from "@/lib/haptics";
 
 type Schema = z.infer<typeof formSchema>;
 
@@ -44,11 +45,11 @@ export function ContactForm() {
   });
   const formAction = useAction(serverAction, {
     onSuccess: () => {
-      // TODO: show success message
+      haptics.success();
       form.reset();
     },
     onError: () => {
-      // TODO: show error message
+      haptics.error();
     },
   });
   const handleSubmit = form.handleSubmit(async (data: Schema) => {
