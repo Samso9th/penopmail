@@ -103,7 +103,7 @@ export const metadata: Metadata = {
     siteName: "PeponMail",
     images: [
       {
-        url: "/meta.png",
+        url: "/meta.png?v=2",
         width: 1200,
         height: 630,
         alt: "PeponMail - Professional Email Addresses",
@@ -115,7 +115,7 @@ export const metadata: Metadata = {
     title: "PeponMail - Professional Email Addresses",
     description:
       "Professional email addresses without the enterprise price. Custom email addresses from ₦500/month.",
-    images: ["/meta.png"],
+    images: ["/meta.png?v=2"],
   },
 };
 
