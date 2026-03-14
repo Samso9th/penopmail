@@ -4,6 +4,7 @@ import * as React from "react";
 
 import { ArrowUpRight, Globe, Mail, Shield } from "lucide-react";
 
+import { EmailStatsChart } from "@/components/email-stats-chart";
 import {
   Card,
   CardContent,
@@ -11,7 +12,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { EmailStatsChart } from "@/components/email-stats-chart";
 
 const stats = [
   { title: "Total Aliases", value: "24", change: "+3", trend: "up", icon: Mail },
