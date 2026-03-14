@@ -4,70 +4,72 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { PRICES, type Region } from "@/lib/region";
 import { cn } from "@/lib/utils";
-
-const categories = [
-  {
-    title: "Getting Started",
-    questions: [
-      {
-        question: "What is an email alias?",
-        answer:
-          "An email alias is a custom email address that forwards messages to your primary inbox. For example, shop@yourbusiness.com can forward to your personal Gmail. You get a professional address without changing your current email provider.",
-      },
-      {
-        question: "Do I need my own domain to get started?",
-        answer:
-          "No! With our Shared Domain plan (₦500/alias/month), you can pick from our list of professional domains like @peponmail.com, @pepon.email, or @peponsend.com. If you want your own domain, our Custom Domain plan (₦1,000/alias/month) lets you use any domain you own.",
-      },
-      {
-        question: "How quickly can I set up my email alias?",
-        answer:
-          "You can create your first alias in under 2 minutes. Sign up, pick a domain (shared or custom), create your alias, and start receiving emails immediately.",
-      },
-    ],
-  },
-  {
-    title: "Pricing & Billing",
-    questions: [
-      {
-        question: "How does the ₦500/month pricing work?",
-        answer:
-          "You pay ₦500 per alias per month on the Shared Domain plan, or ₦1,000 per alias per month on the Custom Domain plan. Billing is monthly and you can cancel at any time.",
-      },
-      {
-        question: "Can I cancel my subscription at any time?",
-        answer:
-          "Yes, you can cancel at any time. When you cancel, your aliases will continue working until the end of your billing period. After that, email forwarding will stop.",
-      },
-    ],
-  },
-  {
-    title: "Technical Questions",
-    questions: [
-      {
-        question: "How do I set up a custom domain?",
-        answer:
-          "After signing up for a Custom Domain plan, you'll need to add DNS records to your domain (we provide the exact records). The verification usually takes a few minutes to a few hours depending on your DNS provider.",
-      },
-      {
-        question: "Does PeponMail read or store my emails?",
-        answer:
-          "No. We only process the routing information needed to forward your emails. We do not read, analyze, or store the content of emails that pass through our service.",
-      },
-    ],
-  },
-];
 
 export const FAQ = ({
   headerTag = "h2",
   className,
   className2,
+  region = "ng",
 }: {
   headerTag?: "h1" | "h2";
   className?: string;
   className2?: string;
+  region?: Region;
 }) => {
+  const p = PRICES[region];
+
+  const categories = [
+    {
+      title: "Getting Started",
+      questions: [
+        {
+          question: "What is an email alias?",
+          answer:
+            "An email alias is a custom email address that forwards messages to your primary inbox. For example, shop@yourbusiness.com can forward to your personal Gmail. You get a professional address without changing your current email provider.",
+        },
+        {
+          question: "Do I need my own domain to get started?",
+          answer: `No! With our Shared Domain plan (${p.shared}/alias/month), you can pick from our list of professional domains like @peponmail.com, @pepon.email, or @peponsend.com. If you want your own domain, our Custom Domain plan (${p.custom}/alias/month) lets you use any domain you own.`,
+        },
+        {
+          question: "How quickly can I set up my email alias?",
+          answer:
+            "You can create your first alias in under 2 minutes. Sign up, pick a domain (shared or custom), create your alias, and start receiving emails immediately.",
+        },
+      ],
+    },
+    {
+      title: "Pricing & Billing",
+      questions: [
+        {
+          question: `How does the ${p.shared}/month pricing work?`,
+          answer: `You pay ${p.shared} per alias per month on the Shared Domain plan, or ${p.custom} per alias per month on the Custom Domain plan. Billing is monthly and you can cancel at any time.`,
+        },
+        {
+          question: "Can I cancel my subscription at any time?",
+          answer:
+            "Yes, you can cancel at any time. When you cancel, your aliases will continue working until the end of your billing period. After that, email forwarding will stop.",
+        },
+      ],
+    },
+    {
+      title: "Technical Questions",
+      questions: [
+        {
+          question: "How do I set up a custom domain?",
+          answer:
+            "After signing up for a Custom Domain plan, you'll need to add DNS records to your domain (we provide the exact records). The verification usually takes a few minutes to a few hours depending on your DNS provider.",
+        },
+        {
+          question: "Does PeponMail read or store my emails?",
+          answer:
+            "No. We only process the routing information needed to forward your emails. We do not read, analyze, or store the content of emails that pass through our service.",
+        },
+      ],
+    },
+  ];
   return (
     <section className={cn("py-28 lg:py-32", className)}>
       <div className="container max-w-5xl">

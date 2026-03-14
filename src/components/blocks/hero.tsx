@@ -4,6 +4,7 @@ import { Mail, Shield, Users, Zap } from "lucide-react";
 
 import { DashedLine } from "@/components/dashed-line";
 import { Button } from "@/components/ui/button";
+import { PRICES, type Region } from "@/lib/region";
 
 const features = [
   {
@@ -28,11 +29,11 @@ const features = [
   },
 ];
 
-export const Hero = () => {
+export const Hero = ({ region = "ng" }: { region?: Region }) => {
+  const p = PRICES[region];
   return (
     <section className="py-28 lg:py-32 lg:pt-44">
       <div className="container flex flex-col justify-between gap-8 md:gap-14 lg:flex-row lg:gap-20">
-        {/* Left side - Main content */}
         <div className="flex-1">
           <h1 className="text-foreground max-w-160 text-3xl tracking-tight md:text-4xl lg:text-5xl">
             Professional Email Aliases{" "}
@@ -42,7 +43,7 @@ export const Hero = () => {
           </h1>
 
           <p className="text-muted-foreground text-1xl mt-5 md:text-3xl">
-            Custom email addresses from ₦500/month. No domain needed. Get
+            Custom email addresses from {p.shared}/month. No domain needed. Get
             professional email addresses in minutes.
           </p>
 
@@ -56,7 +57,6 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Right side - Trust signals */}
         <div className="relative flex flex-1 flex-col justify-center space-y-5 max-lg:pt-10 lg:pl-10">
           <DashedLine
             orientation="vertical"
@@ -87,7 +87,6 @@ export const Hero = () => {
 
       <div className="mt-12 max-lg:ml-6 max-lg:h-[550px] max-lg:overflow-hidden md:mt-20 lg:container lg:mt-24">
         <div className="relative h-[793px] w-full">
-          {/* Desktop images */}
           <Image
             src="/dashLight.png"
             alt="PeponMail dashboard"
@@ -100,7 +99,6 @@ export const Hero = () => {
             fill
             className="rounded-2xl object-cover object-left-top shadow-lg max-lg:hidden hidden dark:lg:block"
           />
-          {/* Mobile images */}
           <Image
             src="/mobDashLight.png"
             alt="PeponMail dashboard"

@@ -1,45 +1,51 @@
-"use client";
-
 import { Check } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { PRICES, type Region } from "@/lib/region";
 import { cn } from "@/lib/utils";
 
-const plans = [
-  {
-    name: "Shared Domain",
-    price: "₦500",
-    unit: "/alias/month",
-    description: "Perfect for starters",
-    features: [
-      "5 email aliases",
-      "Use from our list of domains",
-      "Email forwarding",
-      "Basic support",
-      "Dashboard access",
-      "Spam filtering",
-    ],
-    popular: false,
-  },
-  {
-    name: "Custom Domain",
-    price: "₦1,000",
-    unit: "/alias/month",
-    description: "Full control",
-    features: [
-      "Unlimited email aliases",
-      "Use your own domain",
-      "Email forwarding",
-      "Priority support",
-      "API access",
-      "Custom DNS setup",
-    ],
-    popular: true,
-  },
-];
+export const Pricing = ({
+  className,
+  region = "ng",
+}: {
+  className?: string;
+  region?: Region;
+}) => {
+  const p = PRICES[region];
 
-export const Pricing = ({ className }: { className?: string }) => {
+  const plans = [
+    {
+      name: "Shared Domain",
+      price: p.shared,
+      unit: p.unit,
+      description: "Perfect for starters",
+      features: [
+        "5 email aliases",
+        "Use from our list of domains",
+        "Email forwarding",
+        "Basic support",
+        "Dashboard access",
+        "Spam filtering",
+      ],
+      popular: false,
+    },
+    {
+      name: "Custom Domain",
+      price: p.custom,
+      unit: p.unit,
+      description: "Full control",
+      features: [
+        "Unlimited email aliases",
+        "Use your own domain",
+        "Email forwarding",
+        "Priority support",
+        "API access",
+        "Custom DNS setup",
+      ],
+      popular: true,
+    },
+  ];
   return (
     <section id="pricing" className={cn("py-28 lg:py-32", className)}>
       <div className="container max-w-4xl">

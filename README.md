@@ -1,78 +1,82 @@
-# Mainline Next.js Template
+# PeponMail
 
-Mainline is a free template built with shadcn/ui, Tailwind 4 and Next.js 15.
+Professional email aliases for businesses and individuals. Create custom email addresses without buying a domain — starting from ₦500/month or $0.50/month.
 
-- [Demo](https://mainline-nextjs-template.vercel.app/)
-- [Documentation](https://docs.shadcnblocks.com/templates/getting-started)
-- [Figma](https://www.figma.com/design/cFCLMj7DFv0sK7EVsqKeTa/Mainline?node-id=23250-13201&t=I1nAdchDpknii5Bd-1)
+![PeponMail preview](./public/meta.png)
 
-![Mainline NextJS Template screenshot](./public/og-image.jpg)
+**Live:** [peponmail.com.ng](https://peponmail.com.ng) · [peponmail.com](https://peponmail.com)
+
+---
 
 ## Getting Started
 
 ```bash
 npm install
-```
-
-```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## Tech Stack
+
+- **Next.js 15** — App Router, server components, middleware
+- **TypeScript** — Full type safety
+- **Tailwind CSS 4** — Styling
+- **shadcn/ui** — UI components
+- **React 19**
+- **web-haptics** — Haptic feedback on all interactions
+- **React Hook Form + Zod** — Form validation
+- **Recharts** — Email stats dashboard chart
+- **next-themes** — Dark/light mode
+
+---
 
 ## Features
 
-### Core Technology Stack
+- **Email aliases** — Shared and custom domain plans
+- **Dashboard** — Manage aliases, domains, mail, and settings
+- **Regional pricing** — Automatically shows NGN (₦) on `.com.ng`, USD ($) on `.com`
+- **Dark/light mode** — System-aware with manual toggle
+- **Haptic feedback** — On all buttons, links, accordions, and scroll
+- **Responsive** — Mobile-first, with mobile-specific hero images
+- **SEO** — Full OpenGraph/Twitter meta with custom preview image
 
-- **Next.js 15** with App Router
-- **Tailwind CSS 4** for styling
-- **shadcn/ui** components
-- **TypeScript** support
-- **React 19**
+---
 
-### Key Features
+## Pages
 
-- **Shadcn UI**: uses [shadcn/ui](https://ui.shadcn.com/) core UI components
-- **Theme System**: Dark/light mode with `next-themes`, compatible with [tweakcn](https://tweakcn.com)
-- **Form Handling**: React Hook Form + Zod validation
-- **Server Actions**: Next-safe-action integration for server-side logic
-- **MDX Support**: For content pages
-- **Animations**: Motion library (Framer Motion) integration
-- **ESLint/Prettier**: Pre-configured code formatting and linting
-- **Custom Fonts**: DM Sans font family included
-- **Icons**: Lucide React + React Icons libraries
-- **Styleglide Integration**: For component previews/development
-- **Responsive Design**: Mobile-friendly layout
-- **SEO Ready**: Proper metadata and OG images included
+| Route | Description |
+|-------|-------------|
+| `/` | Landing page |
+| `/pricing` | Pricing plans |
+| `/faq` | Frequently asked questions |
+| `/contact` | Contact form |
+| `/login` | Sign in |
+| `/signup` | Create account |
+| `/onboarding` | Domain & wallet setup |
+| `/dashboard` | App — aliases, domains, mail, settings |
+| `/about` | About PeponMail |
+| `/terms` | Terms & Conditions |
+| `/privacy` | Privacy Policy |
 
-### Pre-built Pages
+---
 
-- Home/Landing page
-- About page
-- Pricing page
-- FAQ page
-- Contact page with form
-- Login/Signup pages
+## Regional Pricing
 
-### Blocks
+Pricing is served automatically based on the domain the site is accessed from:
 
-- Hero section
-- Logo showcase/marquee
-- Features section
-- Resource allocation section
-- Testimonials with carousel
-- Pricing table
-- FAQ with accordion
-- Footer
-- Navigation bar
+| Domain | Currency | Shared Plan | Custom Plan |
+|--------|----------|-------------|-------------|
+| `peponmail.com.ng` | Nigerian Naira (₦) | ₦500/alias/mo | ₦1,000/alias/mo |
+| `peponmail.com` | USD ($) | $0.50/alias/mo | $1.00/alias/mo |
+
+This is handled via Next.js middleware that reads the `host` header and sets an `x-region` response header, which server components read via `headers()`.
+
+---
 
 ## Deployment
 
-Production-ready and tested for deployment on [Vercel](https://vercel.com)
+Deployed on [Vercel](https://vercel.com) with both `peponmail.com` and `peponmail.com.ng` custom domains.
 
-## Credits
-
-- Template by [shadcnblocks.com](https://shadcnblocks.com)
-- Design by [Callum Flack](https://x.com/callumflack)
-- Dev by [Yassine Zaanouni](https://x.com/YassineZaanouni)
-- Produced by [Rob Austin](https://x.com/ausrobdev)

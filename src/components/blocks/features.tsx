@@ -6,6 +6,7 @@ import { ChevronRight } from "lucide-react";
 import { DashedLine } from "../dashed-line";
 
 import { Card, CardContent } from "@/components/ui/card";
+import { PRICES, type Region } from "@/lib/region";
 
 const items = [
   {
@@ -31,7 +32,8 @@ const items = [
   },
 ];
 
-export const Features = () => {
+export const Features = ({ region = "ng" }: { region?: Region }) => {
+  const p = PRICES[region];
   return (
     <section id="features" className="pb-28 lg:pb-32">
       <div className="container">
@@ -51,7 +53,7 @@ export const Features = () => {
           <p className="text-muted-foreground leading-snug">
             Professional email management made simple and affordable. Get custom
             email aliases with full forwarding, API access, and spam filtering —
-            starting from ₦500/month.
+            starting from {p.shared}/month.
           </p>
         </div>
 
