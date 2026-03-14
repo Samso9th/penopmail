@@ -64,11 +64,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "PeponMail - Professional Email Aliases",
+    default: "PeponMail - Professional Email Addresses",
     template: "%s | PeponMail",
   },
   description:
-    "Professional email aliases without the enterprise price. Custom email addresses from ₦500/month. No domain needed.",
+    "Professional email addresses without the enterprise price. Custom email addresses from ₦500/month. No domain needed.",
   keywords: [
     "email alias",
     "email forwarding",
@@ -96,24 +96,24 @@ export const metadata: Metadata = {
     shortcut: [{ url: "/favicon/favicon.ico" }],
   },
   openGraph: {
-    title: "PeponMail - Professional Email Aliases",
+    title: "PeponMail - Professional Email Addresses",
     description:
-      "Professional email aliases without the enterprise price. Custom email addresses from ₦500/month.",
+      "Professional email addresses without the enterprise price. Custom email addresses from ₦500/month.",
     siteName: "PeponMail",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "PeponMail - Professional Email Aliases",
+        alt: "PeponMail - Professional Email Addresses",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "PeponMail - Professional Email Aliases",
+    title: "PeponMail - Professional Email Addresses",
     description:
-      "Professional email aliases without the enterprise price. Custom email addresses from ₦500/month.",
+      "Professional email addresses without the enterprise price. Custom email addresses from ₦500/month.",
     images: ["/og-image.jpg"],
   },
 };
