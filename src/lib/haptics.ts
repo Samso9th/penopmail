@@ -9,6 +9,10 @@ function getInstance(): WebHaptics | null {
 }
 
 export const haptics = {
+  /** Very subtle pulse — scroll milestone */
+  light: () =>
+    getInstance()?.trigger([{ duration: 8, intensity: 0.2 }]),
+
   /** Medium tap — default button press */
   trigger: () => getInstance()?.trigger(),
 

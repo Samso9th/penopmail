@@ -17,6 +17,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { haptics } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 
 const ITEMS = [
@@ -128,7 +129,7 @@ export const Navbar = () => {
           {/* Hamburger Menu Button (Mobile Only) */}
           <button
             className="text-muted-foreground relative flex size-8 lg:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={() => { haptics.trigger(); setIsMenuOpen(!isMenuOpen); }}
           >
             <span className="sr-only">Open main menu</span>
             <div className="absolute top-1/2 left-1/2 block w-[18px] -translate-x-1/2 -translate-y-1/2">
@@ -163,11 +164,12 @@ export const Navbar = () => {
             link.dropdownItems ? (
               <div key={link.label} className="py-4 first:pt-0 last:pb-0">
                 <button
-                  onClick={() =>
+                  onClick={() => {
+                    haptics.trigger();
                     setOpenDropdown(
                       openDropdown === link.label ? null : link.label,
-                    )
-                  }
+                    );
+                  }}
                   className="text-primary flex w-full items-center justify-between text-base font-medium"
                 >
                   {link.label}
@@ -193,6 +195,7 @@ export const Navbar = () => {
                         href={item.href}
                         className="group hover:bg-accent block rounded-md p-2 transition-colors"
                         onClick={() => {
+                          haptics.trigger();
                           setIsMenuOpen(false);
                           setOpenDropdown(null);
                         }}
@@ -219,7 +222,7 @@ export const Navbar = () => {
                   "text-primary hover:text-primary/80 py-4 text-base font-medium transition-colors first:pt-0 last:pb-0",
                   pathname === link.href && "text-muted-foreground",
                 )}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => { haptics.trigger(); setIsMenuOpen(false); }}
               >
                 {link.label}
               </Link>

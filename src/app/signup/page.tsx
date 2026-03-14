@@ -1,9 +1,12 @@
+"use client";
+
 import Link from "next/link";
 
 import { Background } from "@/components/background";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { haptics } from "@/lib/haptics";
 
 const Signup = () => {
   return (
@@ -15,6 +18,7 @@ const Signup = () => {
               <Link
                 href="/"
                 className="text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1.5 text-sm transition-colors"
+                onClick={() => haptics.trigger()}
               >
                 ← Back to home
               </Link>
@@ -60,7 +64,7 @@ const Signup = () => {
                 </div>
                 <div className="text-muted-foreground mx-auto mt-8 flex justify-center gap-1 text-sm">
                   <p>Already have an account?</p>
-                  <Link href="/login" className="text-primary font-medium">
+                  <Link href="/login" className="text-primary font-medium" onClick={() => haptics.trigger()}>
                     Sign in
                   </Link>
                 </div>

@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { haptics } from "@/lib/haptics";
 
 export function Footer() {
   const navigation = [
@@ -39,6 +42,7 @@ export function Footer() {
               <Link
                 href={item.href}
                 className="font-medium transition-opacity hover:opacity-75"
+                onClick={() => haptics.trigger()}
               >
                 {item.name}
               </Link>
@@ -51,6 +55,7 @@ export function Footer() {
               <Link
                 href={item.href}
                 className="text-muted-foreground text-sm transition-opacity hover:opacity-75"
+                onClick={() => haptics.trigger()}
               >
                 {item.name}
               </Link>

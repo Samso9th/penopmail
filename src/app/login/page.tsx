@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 import { Background } from "@/components/background";
@@ -5,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
+import { haptics } from "@/lib/haptics";
 
 const Login = () => {
   return (
@@ -16,6 +19,7 @@ const Login = () => {
               <Link
                 href="/"
                 className="text-muted-foreground hover:text-foreground mb-4 inline-flex items-center gap-1.5 text-sm transition-colors"
+                onClick={() => haptics.trigger()}
               >
                 ← Back to home
               </Link>
@@ -55,7 +59,7 @@ const Login = () => {
                         Remember me
                       </label>
                     </div>
-                    <a href="#" className="text-primary text-sm font-medium">
+                    <a href="#" className="text-primary text-sm font-medium" onClick={() => haptics.trigger()}>
                       Forgot password?
                     </a>
                   </div>
@@ -65,7 +69,7 @@ const Login = () => {
                 </div>
                 <div className="text-muted-foreground mx-auto mt-8 flex justify-center gap-1 text-sm">
                   <p>Don&apos;t have an account?</p>
-                  <Link href="/signup" className="text-primary font-medium">
+                  <Link href="/signup" className="text-primary font-medium" onClick={() => haptics.trigger()}>
                     Sign up
                   </Link>
                 </div>

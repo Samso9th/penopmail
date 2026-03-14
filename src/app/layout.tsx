@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import type { Metadata } from "next";
 
 import { AppShell } from "@/components/app-shell";
+import { ScrollHaptics } from "@/components/scroll-haptics";
 import { StyleGlideProvider } from "@/components/styleglide-provider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
@@ -139,6 +140,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <StyleGlideProvider />
+          <ScrollHaptics />
           <AppShell>{children}</AppShell>
           <Toaster />
         </ThemeProvider>
