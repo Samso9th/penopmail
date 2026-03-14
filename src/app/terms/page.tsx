@@ -41,7 +41,7 @@ const sections = [
   {
     title: "5. Payment Terms",
     content:
-      "Subscriptions are billed monthly in Nigerian Naira (₦). Payments are non-refundable except as required by law. We reserve the right to change pricing with 30 days notice. Failure to pay may result in service suspension or termination.",
+      "Subscriptions are billed monthly. Payments are non-refundable except as required by law. We reserve the right to change pricing with 30 days notice. Failure to pay may result in service suspension or termination.",
   },
   {
     title: "6. Custom Domains",
@@ -54,7 +54,12 @@ const sections = [
       "We strive for 99.9% uptime but do not guarantee uninterrupted service. We may perform maintenance with reasonable notice. We are not liable for service interruptions beyond our control.",
   },
   {
-    title: "8. Termination",
+    title: "8. Spam, Fraud & Abuse Policy",
+    content:
+      "We have a strict zero-tolerance policy for spam and fraudulent activity. If we detect spam-type behaviour, mass unsolicited emails, phishing attempts, fraudulent use, or any other abusive activity originating from your account or aliases, your account will be suspended immediately and without prior notice. Any remaining account balance or prepaid funds will be forfeited and are non-refundable. We reserve the right to report such activity to relevant authorities.",
+  },
+  {
+    title: "9. Termination",
     content:
       "Either party may terminate the service at any time. We may suspend or terminate accounts that violate these terms without notice. Upon termination, your aliases will stop forwarding, and your data may be deleted after 30 days.",
   },

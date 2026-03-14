@@ -7,8 +7,8 @@ import { Button } from "@/components/ui/button";
 
 const features = [
   {
-    title: "10K+ Active Users",
-    description: "Trusted by thousands of Nigerian businesses and individuals.",
+    title: "10K+ Emails/Month",
+    description: "Over 10,000 emails forwarded every month through PeponMail.",
     icon: Users,
   },
   {
@@ -22,8 +22,8 @@ const features = [
     icon: Shield,
   },
   {
-    title: "Nigeria First",
-    description: "₦aira pricing and local support built for you.",
+    title: "Supports Local Payments",
+    description: "Local pricing and local support built for you.",
     icon: Mail,
   },
 ];
@@ -34,9 +34,6 @@ export const Hero = () => {
       <div className="container flex flex-col justify-between gap-8 md:gap-14 lg:flex-row lg:gap-20">
         {/* Left side - Main content */}
         <div className="flex-1">
-          <div className="bg-primary/20 text-foreground mb-5 inline-flex items-center rounded-full px-3 py-1 text-sm font-medium">
-            Now available in Nigeria
-          </div>
           <h1 className="text-foreground max-w-160 text-3xl tracking-tight md:text-4xl lg:text-5xl">
             Professional Email Aliases{" "}
             <span className="text-muted-foreground">
@@ -91,10 +88,16 @@ export const Hero = () => {
       <div className="mt-12 max-lg:ml-6 max-lg:h-[550px] max-lg:overflow-hidden md:mt-20 lg:container lg:mt-24">
         <div className="relative h-[793px] w-full">
           <Image
-            src="/hero.webp"
+            src="/dashLight.png"
             alt="PeponMail dashboard"
             fill
-            className="rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-tr-none"
+            className="rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-tr-none dark:hidden"
+          />
+          <Image
+            src="/dashDark.png"
+            alt="PeponMail dashboard"
+            fill
+            className="hidden rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-tr-none dark:block"
           />
         </div>
       </div>

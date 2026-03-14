@@ -23,7 +23,7 @@ export function Footer() {
         </h2>
         <p className="text-muted-foreground mx-auto max-w-xl leading-snug text-balance">
           Professional email aliases without the enterprise price. Built for
-          Nigerian businesses and individuals.
+          small and medium enterprises businesses and individuals.
         </p>
         <div>
           <Button size="lg" className="mt-4" asChild>

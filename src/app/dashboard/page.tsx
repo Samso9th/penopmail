@@ -1,3 +1,7 @@
+"use client";
+
+import * as React from "react";
+
 import { ArrowUpRight, Globe, Mail, Shield } from "lucide-react";
 
 import {
@@ -7,36 +11,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { EmailStatsChart } from "@/components/email-stats-chart";
 
 const stats = [
-  {
-    title: "Total Aliases",
-    value: "24",
-    change: "+3",
-    trend: "up",
-    icon: Mail,
-  },
-  {
-    title: "Active Domains",
-    value: "3",
-    change: "+1",
-    trend: "up",
-    icon: Globe,
-  },
-  {
-    title: "Emails Forwarded",
-    value: "1,284",
-    change: "+12%",
-    trend: "up",
-    icon: ArrowUpRight,
-  },
-  {
-    title: "Blocked Spam",
-    value: "156",
-    change: "-8%",
-    trend: "down",
-    icon: Shield,
-  },
+  { title: "Total Aliases", value: "24", change: "+3", trend: "up", icon: Mail },
+  { title: "Active Domains", value: "3", change: "+1", trend: "up", icon: Globe },
+  { title: "Emails Forwarded", value: "1,284", change: "+12%", trend: "up", icon: ArrowUpRight },
+  { title: "Blocked Spam", value: "156", change: "-8%", trend: "down", icon: Shield },
 ];
 
 const activity = [
@@ -63,7 +44,7 @@ export default function DashboardPage() {
         </p>
       </div>
 
-      {/* Stats */}
+      {/* Stat cards */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((stat) => {
           const Icon = stat.icon;
@@ -75,11 +56,7 @@ export default function DashboardPage() {
                   <Icon className="text-muted-foreground size-4" />
                 </div>
                 <p className="mt-2 text-2xl font-bold">{stat.value}</p>
-                <p
-                  className={`mt-1 text-xs font-medium ${
-                    stat.trend === "up" ? "text-green-600 dark:text-green-400" : "text-red-500"
-                  }`}
-                >
+                <p className={`mt-1 text-xs font-medium ${stat.trend === "up" ? "text-green-600 dark:text-green-400" : "text-red-500"}`}>
                   {stat.change} from last month
                 </p>
               </CardContent>
@@ -88,12 +65,16 @@ export default function DashboardPage() {
         })}
       </div>
 
+      {/* Email stats interactive chart */}
+      <EmailStatsChart />
+
+      {/* Activity + quick actions */}
       <div className="grid gap-4 lg:grid-cols-2">
-        {/* Recent Activity */}
+        {/* Recent activity */}
         <Card>
           <CardHeader>
             <CardTitle className="text-base">Recent Activity</CardTitle>
-            <CardDescription>Your latest email activity</CardDescription>
+            <CardDescription>Your latest email events</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
@@ -101,32 +82,32 @@ export default function DashboardPage() {
                 <div key={i} className="flex items-center justify-between text-sm">
                   <div>
                     <p className="font-medium">{item.action}</p>
-                    <p className="text-muted-foreground text-xs">{item.alias}</p>
+                    <p className="text-muted-foreground truncate text-xs max-w-36">{item.alias}</p>
                   </div>
-                  <span className="text-muted-foreground text-xs shrink-0">{item.time}</span>
+                  <span className="text-muted-foreground shrink-0 text-xs">{item.time}</span>
                 </div>
               ))}
             </div>
           </CardContent>
         </Card>
 
-        {/* Quick Actions */}
+        {/* Quick actions */}
         <Card>
           <CardHeader>
             <CardTitle className="text-base">Quick Actions</CardTitle>
             <CardDescription>Common tasks you can do</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="space-y-3">
+            <div className="grid gap-3">
               {quickActions.map((action) => {
                 const Icon = action.icon;
                 return (
                   <a
                     key={action.label}
                     href={action.href}
-                    className="hover:bg-muted flex items-center gap-3 rounded-lg p-2 transition-colors"
+                    className="hover:bg-muted flex items-center gap-3 rounded-lg p-3 transition-colors border"
                   >
-                    <div className="bg-primary/10 flex size-9 items-center justify-center rounded-lg">
+                    <div className="bg-primary/10 flex size-9 items-center justify-center rounded-lg shrink-0">
                       <Icon className="size-4" />
                     </div>
                     <div>

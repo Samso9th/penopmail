@@ -48,7 +48,7 @@ export const Pricing = ({ className }: { className?: string }) => {
             Simple, Transparent Pricing
           </h2>
           <p className="text-muted-foreground mx-auto max-w-xl leading-snug text-balance">
-            No hidden fees. Cancel anytime. ₦aira pricing built for Nigerian
+            No hidden fees. Cancel anytime. Local pricing built for SMEs
             businesses.
           </p>
         </div>

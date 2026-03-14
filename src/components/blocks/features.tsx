@@ -10,17 +10,23 @@ import { Card, CardContent } from "@/components/ui/card";
 const items = [
   {
     title: "Custom Domain emails",
-    image: "/features/triage-card.svg",
+    image: null,
+    lightImg: "/CDEDark.png",
+    darkImg: "/CDELight.png",
     href: "/signup",
   },
   {
     title: "Shared Domain aliases",
-    image: "/features/cycle-card.svg",
+    image: null,
+    lightImg: "/SDADark.png",
+    darkImg: "/SDALight.png",
     href: "/signup",
   },
   {
     title: "Instant setup in minutes",
-    image: "/features/overview-card.svg",
+    image: null,
+    lightImg: "/ISMDark.png",
+    darkImg: "/ISMLight.png",
     href: "/signup",
   },
 ];
@@ -56,12 +62,29 @@ export const Features = () => {
               <div key={i} className="flex flex-1 max-md:flex-col">
                 <div className="flex-1 p-4 pe-0! md:p-6">
                   <div className="relative aspect-[1.28/1] overflow-hidden">
-                    <Image
-                      src={item.image}
-                      alt={`${item.title} interface`}
-                      fill
-                      className="object-cover object-left-top ps-4 pt-2"
-                    />
+                    {item.lightImg ? (
+                      <>
+                        <Image
+                          src={item.lightImg}
+                          alt={`${item.title} interface`}
+                          fill
+                          className="object-cover object-left-top ps-4 pt-2 dark:hidden"
+                        />
+                        <Image
+                          src={item.darkImg!}
+                          alt={`${item.title} interface`}
+                          fill
+                          className="hidden object-cover object-left-top ps-4 pt-2 dark:block"
+                        />
+                      </>
+                    ) : (
+                      <Image
+                        src={item.image!}
+                        alt={`${item.title} interface`}
+                        fill
+                        className="object-cover object-left-top ps-4 pt-2"
+                      />
+                    )}
                     <div className="from-background absolute inset-0 z-10 bg-linear-to-t via-transparent to-transparent" />
                   </div>
 

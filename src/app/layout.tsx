@@ -72,7 +72,6 @@ export const metadata: Metadata = {
     "email alias",
     "email forwarding",
     "custom domain email",
-    "Nigeria email",
     "professional email",
     "email management",
     "shared domain email",

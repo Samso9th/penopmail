@@ -46,6 +46,17 @@ const Signup = () => {
                   <Button type="submit" className="mt-2 w-full">
                     Create Account
                   </Button>
+                  <p className="text-muted-foreground mt-3 text-center text-xs">
+                    By creating an account, you agree to our{" "}
+                    <Link href="/terms" className="text-primary underline underline-offset-2">
+                      Terms & Conditions
+                    </Link>{" "}
+                    and{" "}
+                    <Link href="/privacy" className="text-primary underline underline-offset-2">
+                      Privacy Policy
+                    </Link>
+                    .
+                  </p>
                 </div>
                 <div className="text-muted-foreground mx-auto mt-8 flex justify-center gap-1 text-sm">
                   <p>Already have an account?</p>

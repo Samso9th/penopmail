@@ -33,7 +33,7 @@ const categories = [
       {
         question: "How does the ₦500/month pricing work?",
         answer:
-          "You pay ₦500 per alias per month on the Shared Domain plan, or ₦1,000 per alias per month on the Custom Domain plan. Billing is monthly and you can cancel at any time. Payments are processed in Nigerian Naira (₦).",
+          "You pay ₦500 per alias per month on the Shared Domain plan, or ₦1,000 per alias per month on the Custom Domain plan. Billing is monthly and you can cancel at any time.",
       },
       {
         question: "Can I cancel my subscription at any time?",
