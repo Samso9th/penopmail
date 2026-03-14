@@ -63,6 +63,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://peponmail.com"),
   title: {
     default: "PeponMail - Professional Email Addresses",
     template: "%s | PeponMail",
@@ -102,7 +103,7 @@ export const metadata: Metadata = {
     siteName: "PeponMail",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/meta.png",
         width: 1200,
         height: 630,
         alt: "PeponMail - Professional Email Addresses",
@@ -114,7 +115,7 @@ export const metadata: Metadata = {
     title: "PeponMail - Professional Email Addresses",
     description:
       "Professional email addresses without the enterprise price. Custom email addresses from ₦500/month.",
-    images: ["/og-image.jpg"],
+    images: ["/meta.png"],
   },
 };
 
