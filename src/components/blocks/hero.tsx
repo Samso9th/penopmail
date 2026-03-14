@@ -87,17 +87,31 @@ export const Hero = () => {
 
       <div className="mt-12 max-lg:ml-6 max-lg:h-[550px] max-lg:overflow-hidden md:mt-20 lg:container lg:mt-24">
         <div className="relative h-[793px] w-full">
+          {/* Desktop images */}
           <Image
             src="/dashLight.png"
             alt="PeponMail dashboard"
             fill
-            className="rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-tr-none dark:hidden"
+            className="rounded-2xl object-cover object-left-top shadow-lg max-lg:hidden dark:hidden"
           />
           <Image
             src="/dashDark.png"
             alt="PeponMail dashboard"
             fill
-            className="hidden rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-tr-none dark:block"
+            className="rounded-2xl object-cover object-left-top shadow-lg max-lg:hidden hidden dark:lg:block"
+          />
+          {/* Mobile images */}
+          <Image
+            src="/mobDashLight.png"
+            alt="PeponMail dashboard"
+            fill
+            className="rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-tr-none lg:hidden dark:hidden"
+          />
+          <Image
+            src="/mobDashDark.png"
+            alt="PeponMail dashboard"
+            fill
+            className="rounded-2xl object-cover object-left-top shadow-lg max-lg:rounded-tr-none hidden dark:block dark:lg:hidden"
           />
         </div>
       </div>
